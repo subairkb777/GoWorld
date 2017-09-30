@@ -38,6 +38,7 @@ func main() {
 		go openAPI("http://127.0.0.1:8080/API5?param=1")
 		//time.Sleep(1 * time.Second)
 		go openAPI("http://127.0.0.1:8080/API5?param=2")
+		go openAPI("http://127.0.0.1:8080/API5?param=2")
 		//time.Sleep(1 * time.Second)
 		go openAPI("http://127.0.0.1:8080/API6/subair")
 		//time.Sleep(1 * time.Second)

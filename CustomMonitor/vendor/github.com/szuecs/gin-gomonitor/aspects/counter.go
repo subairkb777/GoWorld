@@ -42,6 +42,7 @@ type CounterAspect struct {
 	internalRequestsSum  int
 	internalRequests     map[string]int
 	internalRequestCodes map[string]*RequestType
+	timeStamp 			time.Time      `json:TimeStamp`
 	RequestsSum          int            `json:"request_sum_per_minute"`
 	Requests             map[string]int `json:"requests_per_minute"`
 	RequestCodes map[string]*RequestType `json:"request_codes_per_api"`
@@ -57,6 +58,7 @@ type RequestType struct {
 func NewCounterAspect() *CounterAspect {
 	ca := &CounterAspect{}
 	ca.inc = make(chan tuple)
+	ca.timeStamp = time.Now()
 	ca.internalRequestsSum = 0
 	ca.internalRequests = make(map[string]int, 0)
 	ca.internalRequestCodes = make(map[string]*RequestType,0 )
@@ -121,4 +123,5 @@ func (ca *CounterAspect) reset() {
 	for _, v := range ca.internalRequestCodes {
 		v.RequestCodeCount = v.internalRequestCodesCount
 	}
+
 }

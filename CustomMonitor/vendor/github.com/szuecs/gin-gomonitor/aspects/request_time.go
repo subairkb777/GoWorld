@@ -17,14 +17,14 @@ type RequestTimeAspect struct {
 	inc                  chan APIPath
 	counter					int
 	lastMinuteRequestTimes []float64
-	Count                  int       `json:"count"`
+	Count                  int       `json:"count"`/*
 	Min                    float64   `json:"min"`
 	Max                    float64   `json:"max"`
 	Mean                   float64   `json:"mean"`
 	Stdev                  float64   `json:"stdev"`
 	P90                    float64   `json:"p90"`
 	P95                    float64   `json:"p95"`
-	P99                    float64   `json:"p99"`
+	P99                    float64   `json:"p99"`*/
 	Timestamp              time.Time `json:"timestamp"`
 	RequestAPITime map[string][]float64
 	AvgTime    map[string]float64
